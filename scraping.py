@@ -19,7 +19,8 @@ def scrape_all():
         "news_paragraph": news_paragraph,
         "featured_image": featured_image(browser),
         "facts": mars_facts(),
-        "last_modified": dt.datetime.now()
+        "last_modified": dt.datetime.now(),
+        "hemispheres": hemispheres(browser)
     }
 
     # Stop webdriver and return data
@@ -56,7 +57,7 @@ def mars_news(browser):
 
 
 def featured_image(browser):
-    # Visit URL
+    # Visit URL+3879
     url = 'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html'
     browser.visit(url)
 
@@ -96,6 +97,42 @@ def mars_facts():
 
     # Convert dataframe into HTML format, add bootstrap
     return df.to_html(classes="table table-striped")
+
+def hemispheres(browser):
+        
+    url = 'https://marshemispheres.com/'
+    browser.visit(url)
+
+
+    html = browser.html
+    html_soup = soup(html, 'html.parser')
+    hemisphere_image_urls = []
+
+  
+    hemisphere_image_urls = []
+
+    for i in range (0, 4):
+        full_image = browser.find_by_tag('h3')[i]
+        full_image.click()
+        html = browser.html
+        img_soup = soup(html, 'html.parser')
+        img_url_real = img_soup.find_all ('img', class_ = 'wide-image')
+        titles_real = img_soup.find_all ('h2')
+
+        for img,title in zip(img_url_real, titles_real):
+            hemispheres = {}
+            imgs = img.get('src')
+
+            img_url = f'https://data-class-mars-hemispheres.s3.amazonaws.com/Mars_Hemispheres/{imgs}'
+            titles = title.text
+            hemispheres['img_url'] = img_url
+            hemispheres['title'] = titles
+            hemisphere_image_urls.append(hemispheres)
+        
+        browser.back()
+
+    return hemisphere_image_urls
+
 
 if __name__ == "__main__":
 
