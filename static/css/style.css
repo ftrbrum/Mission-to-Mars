@@ -1,0 +1,21 @@
+
+
+h4, h2, p {
+  color: white;
+}
+.btn{
+  background-color: rgb(156, 5, 5);
+  border-color: white;
+}
+.jumbotron {
+  background-color: black ;
+  color:grey; 
+}
+body {
+  background-color: rgb(100, 98, 98);
+}
+
+tr,td,th {
+  background-color:black;
+  color:grey
+  }
