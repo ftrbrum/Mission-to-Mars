@@ -17,7 +17,7 @@ Code: 	[Mission_to_Mars_Challenge.ipynb](Challenge/Mission_to_Mars_Challenge.ipy
 
 ## Results: 
 
-![mars.png](Challenge/mars.png)
+![mars.PNG](Challenge/mars.PNG)
 
 
 
