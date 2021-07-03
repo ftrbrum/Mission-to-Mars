@@ -9,11 +9,11 @@ After creating Robin's web app she wanted to add some more polish.  She would li
 
 Software: Software: Jupyter Notebook, Anaconda 4.10.1, Python 3.7.6, Visual Studio Code 1.56.0, MongoDB 4.4.6
  
-Code: 	[Mission_to_Mars_Challenge.ipynb](Challenge/Mission_to_Mars_Challenge.ipynb) <b/r>
-		[scraping.py](scraping.py) <b/r>
-		[app.py](app.py) <b/r>
-		[index.html](templates/index.html) <b/r>
-		[style.css](static/css/style.css) <b/r>
+Code: 	[Mission_to_Mars_Challenge.ipynb](Challenge/Mission_to_Mars_Challenge.ipynb) <br/>
+		[scraping.py](scraping.py) <br/>
+		[app.py](app.py) <br/>
+		[index.html](templates/index.html) <br/>
+		[style.css](static/css/style.css) <br/>
 
 ## Results: 
 
