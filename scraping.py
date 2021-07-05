@@ -106,7 +106,7 @@ def hemispheres(browser):
 
     html = browser.html
     html_soup = soup(html, 'html.parser')
-    hemisphere_image_urls = []
+    
 
   
     hemisphere_image_urls = []
